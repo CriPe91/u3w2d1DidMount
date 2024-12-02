@@ -22,6 +22,13 @@ class CommentArea extends Component {
   componentDidMount() {
     this.getReview();
   }
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.asin !== this.props.asin) {
+      this.getReview();
+    } else {
+      console.log("commenti non cambiati!!");
+    }
+  };
 
   render() {
     return (
